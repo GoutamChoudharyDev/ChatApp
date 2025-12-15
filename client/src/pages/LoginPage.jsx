@@ -17,7 +17,7 @@ const LoginPage = () => {
 
     if(currState === "Sign up" && !isDataSubmitted){
       setIsDataSubmitted(true);
-    
+      return;
     }
   }
 
@@ -26,7 +26,7 @@ const LoginPage = () => {
     max-sm:flex-col backdrop-blur-2xl'>
 
       {/* left */}
-      <img src={assets.logo_big} alt="" className='w-[min(30vw, 250px]' />
+      <img src={assets.logo_big} alt="" className='w-[min(30vw, 250px)]' />
 
       {/* right */}
       <form onSubmit={handleSubmit} className='border-2 bg-white/8 text-white border-gray-500 p-6
@@ -80,7 +80,7 @@ const LoginPage = () => {
         )}
 
         <button
-          onClick={() => setIsDataSubmitted(true)}
+          type='sumit'
           className="py-3 bg-linear-to-r from-purple-400 to-violet-600 text-white rounded-md cursor-pointer"
         >
           {currState === "Sign up" ? "Create Account" : "Login Now"}
@@ -92,7 +92,7 @@ const LoginPage = () => {
               <span
                 onClick={() => { setCurrState("Login") }}
                 className='font-medium text-violet-500 cursor-pointer'
-              >
+              > 
                 Login here
               </span>
             </p>
