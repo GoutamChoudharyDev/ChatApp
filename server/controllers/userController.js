@@ -1,6 +1,6 @@
 import { generateToken } from '../lib/utils.js';
 import User from '../models/User.js'
-import bcrypt from 'bcrypt.js'
+import bcrypt from 'bcrypt'
 import cloudinary from '../lib/cloudinary.js';
 
 // --------Signup function----------
