@@ -22,23 +22,6 @@ const ChatContainer = () => {
     setInput("")
   }
 
-  // Handle sending an image
-  // const handleSendImage = async (e) => {
-  //   const file = e.target.files[0];
-  //   if (!file || !file.type.startsWith("image/")) {
-  //     toast.error("Select an image file");
-  //     return;
-
-  //     const reader = new FileReader();
-
-  //     reader.onloadend = async () => {
-  //       await sendMessage({ image: reader.result })
-  //       e.target.value = ""
-  //     }
-  //     reader.readAsDataURL(file)
-  //   }
-  // }
-
   const handleSendImage = async (e) => {
     const file = e.target.files[0];
     if (!file || !file.type.startsWith("image/")) {
@@ -74,7 +57,7 @@ const ChatContainer = () => {
         <img src={selectedUser.profilePic || assets.avatar_icon} alt="profile_icon" className='w-8 rounded-full' />
         <p className='flex-1 text-lg text-white flex items-center gap-2'>
           {selectedUser.fullName}
-          {onlineUsers.includes(selectedUser._id)} && <span className='w-2 h-2 rounded-full bg-green-500'></span>
+          {onlineUsers.includes(selectedUser._id)} <span className='w-2 h-2 rounded-full bg-green-500'></span>
         </p>
         <img onClick={() => { setSelectedUser(null) }} className='md:hidden max-w-7' src={assets.arrow_icon} alt="" />
         <img src={assets.help_icon} alt="helpIcon" className='max-md:hidden max-w-5' />
